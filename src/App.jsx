@@ -7,7 +7,7 @@ const chartData = barbieData.domestic_daily.map(({revenue, date}) => {
   const aldoLSData = aldoData.domestic_daily.find(opp => opp.date === date)
   return {
     date,
-    Barbie: revenue,
+    McQueen: revenue,
     Aldo: aldoLSData ? aldoLSData.revenue : 0
   }
 })
@@ -105,7 +105,7 @@ function App() {
     <div className='grid md:grid-cols-2 gap-12
   grid-cols-1'>
     <div className='flex flex-col gap-4'>
-      <h2 className='text-2xl font-bold'>Barbie</h2>
+      <h2 className='text-2xl font-bold'>McQueen</h2>
       <img src={barbieData.poster_path} alt="" srcset="" />
       </div>
       <div className='flex flex-col gap-4'>
@@ -120,12 +120,12 @@ function App() {
           <DonutChart
             data={[
               {
-                name: 'like',
+                name: false,
                 userScore: Math.round(barbieData.vote_average),
               },
               {
-                name: 'dislike',
-                userScore: Math.round(10 - barbieData.vote_average),
+                name: false,
+                userScore: Math.round(30 - barbieData.vote_average),
               }                        
             ]}
             colors={['indigo', 'cyan']}
@@ -175,10 +175,13 @@ function App() {
       
     
     <div>
-      <h2 className='text-2xl font-bold'>Aldo</h2>
+    
       <div className='grid md:grid-cols-2 gap-12
   grid-cols-1'>
+    <div className='flex flex-col gap-4'>
+      <h2 className='text-2xl font-bold'>Aldo</h2>
       <img src={aldoData.poster_path} alt="" srcset="" />
+      </div>  
      
       <div className='flex flex-col gap-4'>
       <div className="space-y-3">
@@ -192,12 +195,12 @@ function App() {
           <DonutChart
             data={[
               {
-                name: 'like',
+                name: false,
                 userScore: Math.round(aldoData.vote_average),
               },
               {
-                name: 'dislike',
-                userScore: Math.round(12 - aldoData.vote_average),
+                name: false,
+                userScore: Math.round(20 - aldoData.vote_average),
               }                        
             ]}
             colors={['indigo', 'cyan']}
@@ -253,7 +256,7 @@ function App() {
         data={chartData}
         index="date"
         yAxisWidth={90}
-        categories={['Barbie', 'Aldo']}
+        categories={['McQueen', 'Aldo']}
         colors={['indigo', 'cyan']}
         valueFormatter={addCommasToNumber}
       />
