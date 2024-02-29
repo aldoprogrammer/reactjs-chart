@@ -7,9 +7,14 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-  <>
-    <h2 className='text-lg text-blue-500'>Hello</h2>
-  </>
+  <div className='grid grid-cols-2 gap-12'>
+    <div>
+      <h2 className='text-2xl font-bold'>Barbie</h2>
+    </div>
+    <div>
+      <h2 className='text-2xl font-bold'>Aldo</h2>
+    </div>
+  </div>
   )
 }
 
