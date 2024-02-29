@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Card, Metric, Text } from '@tremor/react';
+import { Card, DonutChart, Metric, Text } from '@tremor/react';
 import barbieData from './movie-barbie.json'
 import aldoData from './movie-aldo.json'
 import './App.css'
@@ -24,6 +24,30 @@ function App() {
   <div className='grid grid-cols-2 gap-12'>
     <div>
       <h2 className='text-2xl font-bold'>Barbie</h2>
+      <div className="space-y-3">
+        <span className="text-center block font-mono text-tremor-default text-tremor-content dark:text-dark-tremor-content">
+          donut variant 1
+        </span>
+        <div className="flex justify-center">
+          <DonutChart
+            data={[
+              {
+                name: false,
+                userScore: barbieData.vote_average,
+              },
+              {
+                name: false,
+                userScore: 10 - barbieData.vote_average,
+              }                        
+            ]}
+            colors={['indigo', 'cyan']}
+            category='userScore'
+            variant="donut"
+            label={`${(barbieData.vote_average * 10).toFixed()}%`}
+            onValueChange={(v) => console.log(v)}
+          />
+        </div>
+      </div>
       <div className='grid grid-cols-2 gap-12'>
       <img src={barbieData.poster_path} alt="" srcset="" />
       <Card
