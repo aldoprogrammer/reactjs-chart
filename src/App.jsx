@@ -24,6 +24,8 @@ function App() {
   <div className='grid grid-cols-2 gap-12'>
     <div>
       <h2 className='text-2xl font-bold'>Barbie</h2>
+      <div className='grid grid-cols-2 gap-12'>
+      <img src={barbieData.poster_path} alt="" srcset="" />
       <Card
       className="mx-auto max-w-xs"
       decoration="top"
@@ -56,11 +58,13 @@ function App() {
         </p>
         
       </Card>
-      
+      </div>
       
     </div>
     <div>
       <h2 className='text-2xl font-bold'>Aldo</h2>
+      <div className='grid grid-cols-2 gap-12'>
+      <img src={aldoData.poster_path} alt="" srcset="" />
       <Card
       className="mx-auto max-w-xs"
       decoration="top"
@@ -92,7 +96,7 @@ function App() {
         </p>
         
       </Card>
-      
+      </div>
       
     </div>
   </div>
