@@ -21,9 +21,11 @@ function App() {
   }
   
   return (
-  <div className='grid grid-cols-2 gap-12'>
+  <div className='grid lg:grid-cols-2 gap-12
+  grid-cols-1'>
     
-    <div className='grid grid-cols-2 gap-12'>
+    <div className='grid md:grid-cols-2 gap-12
+  grid-cols-1'>
     <div className='flex flex-col gap-4'>
       <h2 className='text-2xl font-bold'>Barbie</h2>
       <img src={barbieData.poster_path} alt="" srcset="" />
