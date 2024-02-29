@@ -245,7 +245,9 @@ function App() {
     </div>
   </div>
   <Card className='mt-5'>
-     <h3 className="text-lg font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">Newsletter revenue over time (USD)</h3>
+     <h3 className="text-lg font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
+       Daily Revenue Report
+      </h3>
       <LineChart
         className="mt-4 h-72"
         data={chartData}
