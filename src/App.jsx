@@ -22,7 +22,7 @@ function App() {
   
   return (
   <div className='grid lg:grid-cols-2 gap-12
-  grid-cols-1 max-w-screen-lg'>
+  grid-cols-1 max-w-screen-xl'>
     
     <div className='grid md:grid-cols-2 gap-12
   grid-cols-1'>
@@ -101,6 +101,35 @@ function App() {
       <div className='grid md:grid-cols-2 gap-12
   grid-cols-1'>
       <img src={aldoData.poster_path} alt="" srcset="" />
+     
+      <div className='flex flex-col gap-4'>
+      <div className="space-y-3">
+        <span className="text-center block 
+        font-mono 
+         font-bold text-xl
+        dark:text-dark-tremor-content">
+          User Rating
+        </span>
+        <div className="flex justify-center">
+          <DonutChart
+            data={[
+              {
+                name: 'like',
+                userScore: Math.round(aldoData.vote_average),
+              },
+              {
+                name: 'dislike',
+                userScore: Math.round(12 - aldoData.vote_average),
+              }                        
+            ]}
+            colors={['indigo', 'cyan']}
+            category='userScore'
+            variant="donut"
+            label={`${Math.round(aldoData.vote_average * 10)}%`}
+            onValueChange={(v) => console.log(v)}
+          />
+        </div>
+      </div>
       <Card
       className="mx-auto max-w-xs"
       decoration="top"
@@ -132,6 +161,7 @@ function App() {
         </p>
         
       </Card>
+      </div>
       </div>
       
     </div>
