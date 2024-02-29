@@ -22,11 +22,19 @@ function App() {
   
   return (
   <div className='grid grid-cols-2 gap-12'>
-    <div>
+    
+    <div className='grid grid-cols-2 gap-12'>
+    <div className='flex flex-col gap-4'>
       <h2 className='text-2xl font-bold'>Barbie</h2>
+      <img src={barbieData.poster_path} alt="" srcset="" />
+      </div>
+      <div className='flex flex-col gap-4'>
       <div className="space-y-3">
-        <span className="text-center block font-mono text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-          donut variant 1
+        <span className="text-center block 
+        font-mono 
+         font-bold text-xl
+        dark:text-dark-tremor-content">
+          User Rating
         </span>
         <div className="flex justify-center">
           <DonutChart
@@ -48,8 +56,8 @@ function App() {
           />
         </div>
       </div>
-      <div className='grid grid-cols-2 gap-12'>
-      <img src={barbieData.poster_path} alt="" srcset="" />
+      
+     
       <Card
       className="mx-auto max-w-xs"
       decoration="top"
@@ -83,8 +91,9 @@ function App() {
         
       </Card>
       </div>
+      </div>
       
-    </div>
+    
     <div>
       <h2 className='text-2xl font-bold'>Aldo</h2>
       <div className='grid grid-cols-2 gap-12'>
