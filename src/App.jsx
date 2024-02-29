@@ -252,7 +252,7 @@ function App() {
         className="mt-4 h-72"
         data={chartData}
         index="date"
-        yAxisWidth={120}
+        yAxisWidth={90}
         categories={['Barbie', 'Aldo']}
         colors={['indigo', 'cyan']}
         valueFormatter={addCommasToNumber}
