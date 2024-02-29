@@ -40,18 +40,18 @@ function App() {
           <DonutChart
             data={[
               {
-                name: false,
-                userScore: barbieData.vote_average,
+                name: 'like',
+                userScore: Math.round(barbieData.vote_average),
               },
               {
-                name: false,
-                userScore: 10 - barbieData.vote_average,
+                name: 'dislike',
+                userScore: Math.round(10 - barbieData.vote_average),
               }                        
             ]}
             colors={['indigo', 'cyan']}
             category='userScore'
             variant="donut"
-            label={`${(barbieData.vote_average * 10).toFixed()}%`}
+            label={`${Math.round(barbieData.vote_average * 10)}%`}
             onValueChange={(v) => console.log(v)}
           />
         </div>
